@@ -1,210 +1,124 @@
-/* @import url(https://fonts.googleapis.com/css?family=Open+Sans:600); */
+@import url('https://fonts.googleapis.com/css?family=Rakkas');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
 
 body {
-    background-image: url("https://us.123rf.com/450wm/yod67/yod671601/yod67160100093/49897892-duck-vector-art-background-design-for-fabric-and-decor-seamless-pattern.jpg?ver=6");
-    background-position: center;
-    background-repeat: repeat;
-  /* background-size: cover; */
-  font-family: "Shadows Into Light";
-  font-weight: 600;
-  font-size: 30px;
+	font-family: 'Rakkas', cursive !important;
+  background: #FDE3A7; /*CAPE HONEY*/
+	margin: 0px;
+	padding: 0px;
 }
 
-.text {
-  position: absolute;
-  width: 450px;
-  left: 50%;
-  margin-left: -225px;
-  height: 40px;
-  top: 50%;
-  margin-top: -20px;
+::selection {
+	background: transparent;
 }
 
-p {
-  display: inline-block;
-  vertical-align: top;
-  margin: 0;
-  color: rgb(255, 255, 255);
+h4 {
+	font-size: 26px;
+	line-height: 1px;
+	font-family: 'Amatic SC', cursive !important;
 }
 
-.word {
-  position: absolute;
-  width: 220px;
-  opacity: 0;
+.color1{color:#1BBC9B}/*MOUNTAIN MEADOW*/
+.color2{color:#C0392B/*TALL POPPY*/}
+
+
+.card {
+	color: #013243; /*SHERPA BLUE*/
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 300px;
+	height: 400px;
+	background: #e0e1dc;
+	transform-style: preserve-3d;
+	transform: translate(-50%,-50%) perspective(2000px);
+	box-shadow: inset 300px 0 50px rgba(0,0,0,.5), 20px 0 60px rgba(0,0,0,.5);
+	transition: 1s;
 }
 
-.letter {
-  display: inline-block;
-  position: relative;
-  float: left;
-  transform: translateZ(25px);
-  transform-origin: 50% 50% 25px;
+.card:hover {
+	transform: translate(-50%,-50%) perspective(2000px) rotate(15deg) scale(1.2);
+	box-shadow: inset 20px 0 50px rgba(0,0,0,.5), 0 10px 100px rgba(0,0,0,.5);
 }
 
-.letter.out {
-  transform: rotateX(90deg);
-  transition: transform 0.40s cubic-bezier(0.20, 0.030, 0.475, 0.10);
+.card:before {
+	content:'';
+	position: absolute;
+	top: -5px;
+	left: 0;
+	width: 100%;
+	height: 5px;
+	background: #BAC1BA;
+	transform-origin: bottom;
+	transform: skewX(-45deg);
 }
 
-.letter.behind {
-  transform: rotateX(-90deg);
+.card:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: -5px;
+	width: 5px;
+	height: 100%;
+	background: #92A29C;
+	transform-origin: left;
+	transform: skewY(-45deg);
 }
 
-.letter.in {
-  transform: rotateX(0deg);
-  transition: transform 0.40s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+.card .imgBox {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	transform-origin: left;
+	transition: .7s;
 }
 
-.wisteria {
-  color: #2159c0;
+.card .bark {
+	position: absolute;
+	background: #e0e1dc;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: .7s;
 }
 
-.belize {
-  color: #db8420;
+.card .imgBox img {
+	min-width: 250px;
+	max-height: 400px;
 }
 
-.pomegranate {
-  color: rgb(187, 187, 43) ;
+.card:hover .imgBox {
+	transform: rotateY(-135deg);
 }
 
-.green {
-  color: #0ecfa9;
+.card:hover .bark {
+	opacity: 1;
+	transition: .6s;
+  box-shadow: 300px 200px 100px rgba(0, 0, 0, .4) inset;
 }
 
-.midnight {
-  color: #d42f1d;
-}
-.back{
-
- margin: 0;
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-
+.card .details {
+	position: absolute;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+	padding: 0 0 0 10px;
+	z-index: -1;
+	margin-top: 70px;
 }
 
-
-@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200,900');
-
-:root {
-  --text-color: rgb(255, 255, 255);
-  --shadow-color: rgba(207, 94, 59, 0.342);
-  --btn-color: hsl(7, 49%, 48%);
-  --bg-color: #181216;
+.card .details p {
+	font-size: 15px;
+	line-height: 5px;
+	transform: rotate(-10deg);
+	padding: 0 0 0 20px;
 }
 
-* {
-  box-sizing: border-box;
+.card .details h4 {
+	text-align: center;
 }
 
-.b{
-
-    margin: 0;
-    position: absolute;
-    top: 70%;
-    left: 47%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+.text-right {
+	text-align: right;
 }
-button {
-    position:relative;
-    padding: 10px 20px;  
-    border: none;
-    background: none;
-    cursor: pointer;
-    
-    font-family: "Shadows Into Light";
-    font-weight: 900;
-    text-transform: uppercase;
-    font-size: 20px;  
-    color: var(--text-color);
-    
-    background-color: var(--btn-color);
-    box-shadow: var(--shadow-color) 2px 2px 22px;
-    border-radius: 4px; 
-    z-index: 0;  
-    overflow: hidden;   
-  }
-  
-  button:focus {
-    outline-color: transparent;
-    box-shadow: var(--btn-color) 2px 2px 22px;
-  }
-  
-  .right::after, button::after {
-    content: var(--content);
-    display: block;
-    position: absolute;
-    white-space: nowrap;
-    padding: 40px 40px;
-    pointer-events:none;
-  }
-  
-  button::after{
-    font-weight: 200;
-    top: -30px;
-    left: -20px;
-  } 
-  
-  .right, .left {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-  }
-  .right {
-    left: 66%;
-  }
-  .left {
-    right: 66%;
-  }
-  .right::after {
-    top: -30px;
-    left: calc(-66% - 20px);
-    
-    background-color: var(--bg-color);
-    color:transparent;
-    transition: transform .4s ease-out;
-    transform: translate(0, -90%) rotate(0deg)
-  }
-  
-  button:hover .right::after {
-    transform: translate(0, -47%) rotate(0deg)
-  }
-  
-  button .right:hover::after {
-    transform: translate(0, -50%) rotate(-7deg)
-  }
-  
-  button .left:hover ~ .right::after {
-    transform: translate(0, -50%) rotate(7deg)
-  }
-  
-  /* bubbles */
-  button::before {
-    content: '';
-    pointer-events: none;
-    opacity: .6;
-    background:
-      radial-gradient(circle at 20% 35%,  transparent 0,  transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
-      radial-gradient(circle at 75% 44%, transparent 0,  transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
-      radial-gradient(circle at 46% 52%, transparent 0, transparent 4px, var(--text-color) 5px, var(--text-color) 6px, transparent 6px);
-  
-    width: 100%;
-    height: 300%;
-    top: 0;
-    left: 0;
-    position: absolute;
-    animation: bubbles 5s linear infinite both;
-  }
-  
-  @keyframes bubbles {
-    from {
-      transform: translate();
-    }
-    to {
-      transform: translate(0, -66.666%);
-    }
-  }
+
